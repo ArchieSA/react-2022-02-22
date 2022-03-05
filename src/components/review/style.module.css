@@ -1,0 +1,17 @@
+.review{
+    margin: 25px 0;
+}
+
+.userName{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.rating{
+    margin-left: 10px;
+}
+
+.text{
+    margin: 8px 0;
+}
