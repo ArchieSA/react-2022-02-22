@@ -1,0 +1,7 @@
+.rate{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.rate *{
+    margin-right: 3px;
+}
