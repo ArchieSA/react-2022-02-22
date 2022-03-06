@@ -1,0 +1,7 @@
+.rating svg + svg {
+    margin-left: 3px;
+}
+
+.rating span {
+    margin-left: 10px;
+}
