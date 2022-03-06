@@ -12,9 +12,9 @@ export const Product = ({ name, ingredients, price }) => {
         }</div>
         <span>{price}$</span>
         <div>
-            <button className={styles.action} onClick={removeValue}>-</button>
+            <button className={styles.action} onClick={() => {removeValue(); console.log('remove***');}}>-</button>
             <span>{value}</span>
-            <button className={styles.action} onClick={addValue}>+</button>
+            <button className={styles.action} onClick={() => {addValue(); console.log('add***');}}>+</button>
         </div>
     </div>
 }
