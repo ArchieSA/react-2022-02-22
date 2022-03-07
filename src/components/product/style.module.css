@@ -3,9 +3,13 @@
     padding: 10px;
     border-radius: 4px;
 
-    margin: 10px;
+    margin-bottom: 10px;
 }
 
 .action {
     width: 30px;
+}
+
+.value {
+  margin: 0 5px;
 }

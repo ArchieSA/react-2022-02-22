@@ -8,12 +8,12 @@ export const Product = ({ name, ingredients, price }) => {
     return <div className={styles.product}>
         <span>{name}</span>
         <div>{
-            ingredients.map((ingredient) => <span key={ingredient}>{ingredient}</span>)
+            ingredients.map((ingredient) => <span key={ingredient}>{`${ingredient} `}</span>)
         }</div>
         <span>{price}$</span>
         <div>
             <button className={styles.action} onClick={removeValue}>-</button>
-            <span>{value}</span>
+            <span className={styles.value}>{value}</span>
             <button className={styles.action} onClick={addValue}>+</button>
         </div>
     </div>
