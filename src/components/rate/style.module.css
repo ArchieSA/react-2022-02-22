@@ -1,0 +1,11 @@
+.star_grey, .star_gold {
+    width: 20%;
+}
+
+.star_grey path {
+    fill: lightgrey;
+}
+
+.star_gold path {
+    fill: gold;
+}
