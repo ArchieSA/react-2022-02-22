@@ -1,5 +1,4 @@
-import { ReactComponent as StarIcon } from '../../assets/icons/star.svg';
-
+import star from '../../assets/icons/star.svg';
 import styles from './style.module.css';
 
 export const Rate = ({ rateValue }) => {
@@ -8,8 +7,10 @@ export const Rate = ({ rateValue }) => {
   }
   return [...Array(5)].map((_, i) => {
     return (
-      <StarIcon
+      <img
         key={i}
+        src={star}
+        alt="star rating"
         className={
           i <= Math.round(rateValue) - 1 ? styles.star_gold : styles.star_grey
         }
@@ -17,9 +18,3 @@ export const Rate = ({ rateValue }) => {
     );
   });
 };
-
-// return (
-//     <svg fill="gold" width="20" >
-//         <use xlinkHref="../../assets/icons/sprite.svg#star"></use>
-//     </svg>
-// )

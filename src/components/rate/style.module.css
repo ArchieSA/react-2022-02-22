@@ -2,10 +2,10 @@
     width: 20px;
 }
 
-.star_grey path {
-    fill: lightgrey;
+.star_grey {
+    filter: invert(88%) sepia(4%) saturate(3%) hue-rotate(314deg) brightness(92%) contrast(103%);
 }
 
-.star_gold path {
-    fill: gold;
+.star_gold {
+    filter: invert(84%) sepia(50%) saturate(2086%) hue-rotate(358deg) brightness(101%) contrast(106%);
 }
