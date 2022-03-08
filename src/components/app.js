@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu } from "./menu/component"
-import { Tabs } from "./tabs/component"
+import { Menu } from "./menu/component";
+import { Tabs } from "./tabs/component";
+import { Rate } from "./rate/rate";
 
 export function App({ restaurants }) {
   const [activeId, setActiveId] = useState(restaurants[0].id);
