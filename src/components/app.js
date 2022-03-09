@@ -1,8 +1,6 @@
-import { useState } from "react";
-import { Menu } from "./menu/component";
-import { Tabs } from "./tabs/component";
-import { Reviews } from "./reviews/component";
-import styles from './style.module.css';
+import { useState } from 'react';
+import { Tabs } from './tabs/component';
+import { Restaurant } from './restaurant/component';
 
 export function App({ restaurants }) {
   const [activeId, setActiveId] = useState(restaurants[0].id);
@@ -11,11 +9,13 @@ export function App({ restaurants }) {
 
   return (
     <div>
-      <Tabs restaurants={restaurants} onTabClick={setActiveId}/>
-      <div className={styles.restaurantBody}>
-        <Menu menu={activeRestaurant.menu} />
-        <Reviews reviewsList={activeRestaurant.reviews} />
-      </div>
+      <Tabs 
+        restaurants={restaurants} 
+        onTabClick={setActiveId} />
+      <Restaurant 
+        restaurantId={activeId}
+        reviews={activeRestaurant.reviews} 
+        menu={activeRestaurant.menu} />
     </div>
   );
 }

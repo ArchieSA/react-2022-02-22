@@ -2,7 +2,7 @@ import { Rate } from '../rate/component';
 import styles from './style.module.css';
 import headerStyles from '../../assets/styles/header.module.css';
 
-export const Reviews = ({ reviewsList, restaurantId }) => {
+export const Reviews = ({ reviewsList }) => {
     return <div className={styles.reviewsContainer}>
         <h3 className={`${headerStyles.header} ${headerStyles.h3}`}>
             Reviews
@@ -19,7 +19,7 @@ export const Reviews = ({ reviewsList, restaurantId }) => {
                             </h4>
                             <Rate 
                                 rateValue={review.rating}
-                                restaurantId={restaurantId} />
+                                id={review.id} />
                         </div>
                         <div className={styles.reviewBody}>
                             { review.text }

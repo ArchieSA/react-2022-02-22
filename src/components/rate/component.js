@@ -4,9 +4,9 @@ import styles from './style.module.css';
 
 const maxRateValue = 5;
 
-export const Rate = ({ rateValue, restaurantId }) => {
-    const goldStar = (index) => <img alt="gold-star" key={restaurantId + '-gold-' + index} src={GoldStarIcon} className={styles.starIcon} />;
-    const greyStar = (index) => <img alt="grey-star" key={restaurantId + '-grey-' + index} src={GreyStarIcon} className={styles.starIcon} />;
+export const Rate = ({ rateValue, id }) => {
+    const goldStar = (index) => <img alt="gold-star" key={id + '-gold-' + index} src={GoldStarIcon} className={styles.starIcon} />;
+    const greyStar = (index) => <img alt="grey-star" key={id + '-grey-' + index} src={GreyStarIcon} className={styles.starIcon} />;
     const starsArray = [...Array(maxRateValue)];
 
     if (!rateValue || typeof rateValue !== 'number' || rateValue < 0 || rateValue > 5) {
