@@ -1,0 +1,25 @@
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.review {
+  padding: 6px 8px;
+  border-right: 1px solid grey;
+}
+
+.name {
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.text {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.rating {
+
+}

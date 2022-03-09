@@ -1,0 +1,13 @@
+.rate {
+  display: inline-block;
+}
+
+.star {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.active-star {
+  filter: invert(70%) sepia(91%) saturate(713%) hue-rotate(353deg) brightness(101%) contrast(102%);
+}
