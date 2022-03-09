@@ -1,0 +1,31 @@
+.reviewsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    max-height: 580px;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.reviewsList {
+    overflow-y: auto;
+}
+
+.review {
+    padding-bottom: 20px;
+}
+
+.review:not(:last-of-type) {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5pxx;
+}
