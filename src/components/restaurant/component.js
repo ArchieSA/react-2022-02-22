@@ -15,7 +15,7 @@ export const Restaurant = ({ restaurantId, menu, reviews }) => {
 
     return <div>
         <div className={styles.restarauntAverage}>
-            <span>Average rating: { average }</span>
+            <span>Average rating: { Math.round(average) }</span>
             <Rate rateValue={Math.round(average)} id={restaurantId}/>
         </div>
         <div className={styles.restaurant}>
