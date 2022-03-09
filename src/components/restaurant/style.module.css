@@ -1,0 +1,13 @@
+.restarauntAverage {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.restarauntAverage > span {
+    margin-right: 15px;
+}
+
+.restaurant {
+    display: flex;
+}

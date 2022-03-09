@@ -1,0 +1,12 @@
+.starsContainer {
+    display: flex;
+}
+
+.starIcon {
+    width: 26px;
+    height: 26px;
+}
+
+.starIcon:not(:last-of-type) {
+    margin-right: 8px;
+}
