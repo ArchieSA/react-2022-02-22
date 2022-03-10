@@ -1,6 +1,6 @@
-import { Product } from "../product/component"
+import { Product } from "../product/component";
 
-export const Menu = ({ menu }) => {
+const Menu = ({ menu }) => {
     return (
         <div>
             {
@@ -10,3 +10,5 @@ export const Menu = ({ menu }) => {
         </div>
     );
 }
+
+export default Menu;

@@ -7,9 +7,11 @@ export const Product = ({ name, ingredients, price }) => {
 
     return <div className={styles.product}>
         <span>{name}</span>
-        <div>{
+        <div>
+        {
             ingredients.map((ingredient) => <span key={ingredient}>{ingredient}</span>)
-        }</div>
+        }
+        </div>
         <span>{price}$</span>
         <div>
             <button className={styles.action} onClick={removeValue}>-</button>
