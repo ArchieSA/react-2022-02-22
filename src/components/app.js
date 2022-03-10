@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState } from "react";
-import { Menu } from "./menu/component"
-import { Tabs } from "./tabs/component"
+import Tabs from "./tabs/component";
+import Restaurant from "./restaurant/component";
 
-export function App({ restaurants }) {
+export const App = ({ restaurants }) => {
   const [activeId, setActiveId] = useState(restaurants[0].id);
 
   const activeRestaurant = restaurants.find(({id}) => id === activeId);
@@ -10,7 +11,7 @@ export function App({ restaurants }) {
   return (
     <div>
       <Tabs restaurants={restaurants} onTabClick={setActiveId}/>
-      <Menu menu={activeRestaurant.menu} />
+      <Restaurant menu={activeRestaurant.menu} reviews={activeRestaurant.reviews}/>
     </div>
   );
 }
