@@ -1,0 +1,18 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 10px;
+}
+
+.card_title {
+    display: flex;
+}
+
+.card_title h4 {
+    margin: 10px;
+    justify-content: center;
+}
+
+.review_text {
+    margin: 10px;
+}
