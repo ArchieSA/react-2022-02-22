@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export class ErrorBoundary extends React.Component {
+class ErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
 
@@ -17,9 +18,18 @@ export class ErrorBoundary extends React.Component {
 
     render() {
         if (this.state.hasError) {
-            return <h1>Has Error</h1>;
+            return this.props.altComponent;
         }
 
         return this.props.children;
     }
 }
+
+ErrorBoundary.propTypes = {
+    altComponent : PropTypes.node
+};
+ErrorBoundary.defaultProps = {
+    altComponent : <h1>Has Error!</h1>
+};
+
+export {ErrorBoundary}

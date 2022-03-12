@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { Rate } from '../rate/component';
 import styles from './styles.module.css';
 
-export const Review = ({ user, text, rating }) => (
+const Review = ({ user, text, rating }) => (
     <div className={styles.review}>
         <div className={styles.content}>
             <div>
@@ -14,3 +15,16 @@ export const Review = ({ user, text, rating }) => (
         </div>
     </div>
 );
+Review.propTypes = {
+    user : PropTypes.string,
+    text : PropTypes.string,
+    rating : PropTypes.number
+};
+
+Review.defaultProps = {
+    name : "anonymous",
+    text : "no comment",
+    rating : 0
+}
+
+export {Review}
