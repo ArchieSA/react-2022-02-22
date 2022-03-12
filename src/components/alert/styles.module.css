@@ -1,0 +1,39 @@
+.alert{
+  padding: 20px 26px;
+  margin: 16px 0;
+  border: 1px solid;
+}
+
+.success{
+  color: rgb(41,154,11);;
+  background: rgba(41,154,11, .2);;
+  border-color: rgb(41,154,11);;
+}
+
+.error{
+  color: rgb(169,3,41);
+  background: rgba(169,3,41, .2);
+  border-color: rgb(169,3,41);
+}
+
+.default{
+  color: #444;
+  background: rgba(169,169,169, .2);
+  border-color: rgb(169,169,169);
+}
+
+.info {
+  color: rgb(37,141,200);
+  background: rgba(37,141,200, .1);
+  border-color: rgba(37,141,200, 0.3);
+}
+
+.title{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.text{
+  margin-top: 10px;
+}
+

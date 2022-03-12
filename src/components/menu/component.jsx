@@ -1,6 +1,7 @@
 import { Product } from "../product/component";
 import styles from './styles.module.css';
 import PropTypes from 'prop-types';
+import {Alert} from "../alert/component";
 
 const Menu = ({ menu }) => {
     return (
