@@ -1,0 +1,17 @@
+.alert {
+    padding: 20px;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.info {
+    background-color: var(--blue);
+}
+
+.warning {
+    background-color: var(--orange);
+}
+
+.error {
+    background-color: var(--red);
+}
