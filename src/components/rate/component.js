@@ -5,8 +5,9 @@ import styles from './style.module.css';
 const Rate = ({ value }) => {
     const ids = [];
     for(let i = 0; i < value; i ++) {
-        ids[i] = Math.random();
+        ids[i] = i;
     } 
+    
     return <>
         {
             ids.map(id => {

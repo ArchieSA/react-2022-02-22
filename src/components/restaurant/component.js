@@ -5,11 +5,8 @@ import Reviews from '../review/component';
 import styles from './style.module.css';
 
 const Restourant = ({menu, reviews}) => {
-    let sum  = 0;
-    for (const rev of reviews) {
-        sum += rev.rating;
-    }
-    const restRating = Math.round(sum / 5);
+    const sum = reviews.reduce((acc, review) => acc + review.rating, 0);
+    const restRating = Math.round(sum / reviews.length);
 
     return <div>
         <div className={styles.rating}>Рейтинг ресторана: <Rate value={restRating} /></div>
