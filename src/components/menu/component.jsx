@@ -1,4 +1,4 @@
-import { Product } from "../product/component";
+import Product from "../product/component";
 import styles from './styles.module.css';
 import PropTypes from 'prop-types';
 
@@ -17,7 +17,6 @@ const Menu = ({ menu }) => {
 Menu.propTypes = {
     menu: PropTypes.array,
 };
-
 
 Menu.defaultProps = {
     menu: [],
