@@ -1,0 +1,15 @@
+.review {
+    padding-bottom: 20px;
+}
+
+.review:not(:last-of-type) {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5pxx;
+}
