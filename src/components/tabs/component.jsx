@@ -1,8 +1,8 @@
 import cn from 'classnames';
-
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
-export function Tabs({ tabs, activeId, onChange }) {
+const Tabs = ({ tabs, activeId, onChange }) => {
     return (
         <div className={styles.tabs}>
             {tabs.map(({ id, label }) => (
@@ -17,3 +17,11 @@ export function Tabs({ tabs, activeId, onChange }) {
         </div>
     );
 }
+
+Tabs.propTypes = {
+    tabs: PropTypes.array,
+    activeId: PropTypes.string,
+    onChange: PropTypes.func,
+}
+
+export default Tabs;

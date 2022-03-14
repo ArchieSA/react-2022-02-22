@@ -1,5 +1,5 @@
-import { Header } from './header/component';
-import { Restaurants } from './restaurants/component';
+import Header from './header/component';
+import Restaurants from './restaurants/component';
 
 export function App({ restaurants }) {
   return (
