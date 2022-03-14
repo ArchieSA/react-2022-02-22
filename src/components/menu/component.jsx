@@ -18,9 +18,4 @@ Menu.propTypes = {
     menu: PropTypes.array,
 };
 
-
-Menu.defaultProps = {
-    menu: [],
-};
-
 export default Menu;

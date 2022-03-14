@@ -1,6 +1,7 @@
 import styles from "./style.module.css";
 import { Button } from '../button/component';
 import useValue from "../../hooks/use-value";
+import PropTypes from 'prop-types';
 
 export const Product = ({ product }) => {
     const {amount, decrement, increment} = useValue(0);
@@ -23,3 +24,19 @@ export const Product = ({ product }) => {
         </div>
     </div>
 }
+
+Product.propTypes = {
+    product: PropTypes.shape({
+        name: PropTypes.string,
+        ingredients: PropTypes.array,
+        price: PropTypes.number 
+    })
+};
+
+Product.defaultProps = {
+    product: {
+        name: '',
+        ingredients: [],
+        price: 0 
+    },
+};

@@ -10,4 +10,3 @@ export const Button = ({ icon, ...props }) => (
         {icons[icon]}
     </button>
 )
-
