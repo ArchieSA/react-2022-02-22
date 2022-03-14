@@ -4,19 +4,19 @@ import { Rate } from '../rate/component';
 import styles from './style.module.css';
 
 export const Restaurant = ({ restaurantId, menu, reviews }) => {
-    const average = reviews.reduce((prevValue, currValue) => {
+    const average = Math.round(reviews.reduce((prevValue, currValue) => {
         const rating = currValue.rating;
         if (typeof rating === 'number' && rating > 0) {
             return prevValue + rating;
         } else {
             return prevValue;
         }
-    }, 0) / reviews.length;
+    }, 0) / reviews.length);
 
     return <div>
         <div className={styles.restarauntAverage}>
-            <span>Average rating: { Math.round(average) }</span>
-            <Rate rateValue={Math.round(average)} id={restaurantId}/>
+            <span>Average rating: { average }</span>
+            <Rate rateValue={average} id={restaurantId}/>
         </div>
         <div className={styles.restaurant}>
             <Menu menu={menu} />
