@@ -4,11 +4,14 @@ import Menu from '../menu/component';
 import Reviews from '../reviews/component';
 import Banner from '../banner/component';
 import Rate from '../rate/component';
-import { ErrorBoundary } from '../error-boundary/component';
+import { MenuErrorBoundary } from '../menu-error-boundary/component';
+import { ReviewsErrorBoundary } from '../reviews-error-boundary/component';
+
 import styles from './styles.module.css';
 import PropTypes from 'prop-types'
 
 const Restaurant = ({ id, name, menu, reviews }) => {
+
     const averageRating = useMemo(() => {
         const total = reviews.reduce((acc, { rating }) => acc + rating, 0);
         return Math.round(total / reviews.length);
@@ -21,10 +24,15 @@ const Restaurant = ({ id, name, menu, reviews }) => {
             </Banner>
 
             <div className={styles.restaurant}>
-                <ErrorBoundary key={id}>
+                <MenuErrorBoundary key={id}>
                     <Menu menu={menu} />
-                    <Reviews reviews={reviews} />
-                </ErrorBoundary>
+                </MenuErrorBoundary>
+                <>
+                    <ReviewsErrorBoundary key={id}>
+                        <Reviews reviews={reviews} />
+                    </ReviewsErrorBoundary>
+                </> 
+                 
             </div>
         </div >
     );
