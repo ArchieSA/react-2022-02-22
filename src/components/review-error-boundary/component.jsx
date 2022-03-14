@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class ErrorBoundary extends React.Component {
+export class ReviewErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
 
@@ -17,7 +17,11 @@ export class ErrorBoundary extends React.Component {
 
     render() {
         if (this.state.hasError) {
-            return <h1>Has Error</h1>;
+            return (
+                <div>
+                    Не удалось загрузить отзыв
+                </div>
+            );
         }
 
         return this.props.children;
