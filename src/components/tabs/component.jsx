@@ -1,6 +1,7 @@
 import cn from 'classnames';
 
 import styles from './styles.module.css';
+import PropTypes from 'prop-types'
 
 export function Tabs({ tabs, activeId, onChange }) {
     return (
@@ -16,4 +17,10 @@ export function Tabs({ tabs, activeId, onChange }) {
             ))}
         </div>
     );
+}
+
+Tabs.propTypes = {
+    tabs: PropTypes.array,
+    activeId: PropTypes.string,
+    onChange: PropTypes.func,
 }

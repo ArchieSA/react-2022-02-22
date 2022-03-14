@@ -1,5 +1,6 @@
 import { Header } from './header/component';
 import { Restaurants } from './restaurants/component';
+import PropTypes from 'prop-types'
 
 export function App({ restaurants }) {
   return (
@@ -8,4 +9,8 @@ export function App({ restaurants }) {
       <Restaurants restaurants={restaurants} />
     </div>
   );
+}
+
+App.propTypes = {
+  restaurants: PropTypes.array.isRequired,
 }
