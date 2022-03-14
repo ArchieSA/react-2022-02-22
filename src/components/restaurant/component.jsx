@@ -1,7 +1,7 @@
 
 import { useMemo } from 'react';
 import Menu from '../menu/component';
-import { Reviews } from '../reviews/component';
+import Reviews from '../reviews/component';
 import Banner from '../banner/component';
 import Rate from '../rate/component';
 import { ErrorBoundary } from '../error-boundary/component';
