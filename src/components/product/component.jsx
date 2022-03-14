@@ -1,8 +1,9 @@
 import styles from "./style.module.css";
-import { Button } from '../button/component';
+import Button from '../button/component';
 import useValue from "../../hooks/use-value";
+import PropTypes from 'prop-types';
 
-export const Product = ({ product }) => {
+const Product = ({ product }) => {
     const {amount, decrement, increment} = useValue(0);
     return <div className={styles.product}>
         <div className={styles.content}>
@@ -23,3 +24,13 @@ export const Product = ({ product }) => {
         </div>
     </div>
 }
+
+Product.propTypes = {
+    product: PropTypes.object,
+}
+
+Product.defaultProps = {
+    product: {}
+}
+
+export default Product;

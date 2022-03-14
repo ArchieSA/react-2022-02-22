@@ -1,10 +1,10 @@
 import cn from 'classnames';
-
+import PropTypes from 'prop-types';
 import { ReactComponent as Star } from '../../icons/star.svg';
 
 import styles from './styles.module.css';
 
-export const Rate = ({ value }) => (
+const Rate = ({ value }) => (
     <div>
         {[...Array(5)].map((_, i) => (
             <Star
@@ -14,3 +14,13 @@ export const Rate = ({ value }) => (
         ))}
     </div>
 );
+
+Rate.propTypes = {
+    value: PropTypes.number,
+}
+
+Rate.defaultProps = {
+    value: 0
+}
+
+export default Rate;

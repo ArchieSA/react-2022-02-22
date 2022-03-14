@@ -1,13 +1,14 @@
-
 import { useMemo } from 'react';
 import Menu from '../menu/component';
-import { Reviews } from '../reviews/component';
-import { Banner } from '../banner/component';
-import { Rate } from '../rate/component';
-import { ErrorBoundary } from '../error-boundary/component';
+import Reviews from '../reviews/component';
+import Banner from '../banner/component';
+import Rate from '../rate/component';
+import ErrorBoundary from '../error-boundary/component';
 import styles from './styles.module.css';
+import PropTypes from 'prop-types';
+import ErrorBoundaryForReviews from '../error-boundary/error-boundary-for-reviews/component';
 
-export const Restaurant = ({ restaurant }) => {
+const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
 
     const averageRating = useMemo(() => {
@@ -24,9 +25,23 @@ export const Restaurant = ({ restaurant }) => {
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <Menu menu={menu} />
-                    <Reviews reviews={reviews} />
                 </ErrorBoundary>
+                <ErrorBoundaryForReviews>
+                    <Reviews reviews={reviews} />
+                </ErrorBoundaryForReviews>
+                
             </div>
         </div >
     );
 };
+
+Restaurant.propTypes = {
+    restaurant: PropTypes.object,
+}
+
+Restaurant.defaultProps = {
+    restaurant: {}
+}
+
+
+export default Restaurant;
