@@ -4,7 +4,7 @@ import Menu from '../menu/component';
 import { Reviews } from '../reviews/component';
 import { Banner } from '../banner/component';
 import { Rate } from '../rate/component';
-import { ErrorBoundary } from '../error-boundary/component';
+import { ErrorBoundaryReviews } from '../error-boundary-reviews/component';
 import styles from './styles.module.css';
 
 const Restaurant = ({ restaurant }) => {
@@ -22,10 +22,10 @@ const Restaurant = ({ restaurant }) => {
             </Banner>
 
             <div className={styles.restaurant}>
-                <ErrorBoundary key={restaurant.id}>
-                    <Menu menu={menu} />
+                <Menu menu={menu} />
+                <ErrorBoundaryReviews key={restaurant.id}>
                     <Reviews reviews={reviews} />
-                </ErrorBoundary>
+                </ErrorBoundaryReviews>
             </div>
         </div >
     );
