@@ -2,13 +2,14 @@ import { Product } from "../product/component";
 import styles from './styles.module.css';
 import PropTypes from 'prop-types';
 import React from 'react';
+import {ProductContainer} from "../product/container";
 
 const Menu = ({ menu }) => {
     return (
         <div className={styles.menu}>
             <div>
                 {menu.map((product) => (
-                    <Product key={product.id} product={product} />
+                    <ProductContainer key={product.id} product={product} />
                 ))}
             </div>
         </div>
