@@ -1,14 +1,13 @@
 import styles from "./style.module.css";
 import { Button } from '../button/component';
-import useValue from "../../hooks/use-value";
+import { joinIngredients } from './utils';
 
-export const Product = ({ product }) => {
-    const {amount, decrement, increment} = useValue(0);
+export const Product = ({ product, amount, decrement, increment }) => {
     return <div className={styles.product}>
         <div className={styles.content}>
             <div>
                 <h4 className={styles.title}>{product.name}</h4>
-                <p className={styles.description}>{product.ingredients.join(', ')}</p>
+                <p className={styles.description}>{joinIngredients(product.ingredients)}</p>
                 <div className={styles.price}>{product.price} $</div>
             </div>
             <div>
