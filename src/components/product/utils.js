@@ -1,3 +1,3 @@
 export function joinIngredients(ingredients) {
-    return ingredients.join(', ')
+    return Array.isArray(ingredients) ? ingredients.join(', ') : "";
 }
