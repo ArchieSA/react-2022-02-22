@@ -1,3 +1,3 @@
 export function joinIngredients(ingredients) {
-    return ingredients.join(', ')
+    return ingredients ? ingredients.join(', ') : ''
 }

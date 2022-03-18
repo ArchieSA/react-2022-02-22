@@ -12,7 +12,7 @@ export const Product = ({ product, amount, decrement, increment }) => {
             </div>
             <div>
                 <div className={styles.counter}>
-                    <div className={styles.count}>{amount}</div>
+                    <div className={styles.count} data-testid='counter'>{amount}</div>
                     <div className={styles.buttons}>
                         <Button onClick={decrement} icon="minus" />
                         <Button onClick={increment} icon="plus" />
