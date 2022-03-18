@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Header } from './component'
 
 it('our first test', () => {
@@ -8,7 +8,7 @@ it('our first test', () => {
     expect(screen.getByText('Test ME')).toBeInTheDocument();
 });
 
-it('our second test', () => {
+/*it('our second test', () => {
     const mockEffect = jest.fn();
 
     render(<Header effect={mockEffect} />);
@@ -28,4 +28,4 @@ it('our third test', () => {
     }));
 
     expect(mockCallback).toHaveBeenCalled();
-});
+});*/
