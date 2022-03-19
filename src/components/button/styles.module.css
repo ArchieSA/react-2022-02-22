@@ -18,6 +18,10 @@
     transition: 0.2s all;
     text-transform: uppercase;
   }
+
+.button-large {
+    width: 200px;
+}
   
   .button:hover,
   .button:focus,
