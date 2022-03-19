@@ -1,7 +1,7 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 60px;
     background: var(--black);
     position: relative;
@@ -15,7 +15,6 @@
   }
 
 .basket {
-  margin-left: auto;
   margin-right: 20px;
 }
 
