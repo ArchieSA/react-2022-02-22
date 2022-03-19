@@ -11,6 +11,7 @@ export const userReducer = (state = initialState, action) => {
       const newUser = {
         username: action.username,
         budget: action.budget,
+        gender: action.gender,
       };
       return {
         ...state,
@@ -18,9 +19,7 @@ export const userReducer = (state = initialState, action) => {
         user: newUser,
       };
     case LOGOUT:
-      return {
-        ...initialState,
-      };
+      return initialState;
     default:
       return state;
   }

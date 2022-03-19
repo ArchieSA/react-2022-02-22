@@ -11,7 +11,13 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <Logo className={styles.logo} />
-      {isLoggedIn && <Avatar username={user.username} budget={user.budget} />}
+      {isLoggedIn && (
+        <Avatar
+          username={user.username}
+          budget={user.budget}
+          gender={user.gender}
+        />
+      )}
       <Basket className={styles.basket} />
     </header>
   );

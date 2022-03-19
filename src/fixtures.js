@@ -141,7 +141,15 @@ export const restaurants = [
   },
 ];
 
-export const user = {
-  username: 'Jessica',
-  budget: '100.00$',
-};
+export const users = [
+  {
+    username: 'Jessica',
+    budget: '100.00$',
+    gender: 'female',
+  },
+  {
+    username: 'Steven',
+    budget: '150.00$',
+    gender: 'male',
+  },
+];
