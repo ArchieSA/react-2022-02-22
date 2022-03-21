@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 const icons = {
     plus: '+',
     minus: '-',
+    delete: 'x'
 };
 
 export const Button = ({ icon, ...props }) => (

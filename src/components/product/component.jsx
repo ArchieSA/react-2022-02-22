@@ -4,7 +4,7 @@ import { Button } from '../button/component';
 import { joinIngredients } from './utils';
 import {ThemeContext} from '../app';
 
-export const Product = ({ product, amount, decrement, increment }) => {
+export const Product = ({ product, amount, decrement, increment, deleteCallback }) => {
     const theme = useContext(ThemeContext);
 
     return <div className={styles.product}>
@@ -19,6 +19,7 @@ export const Product = ({ product, amount, decrement, increment }) => {
                 <div className={styles.counter}>
                     <div className={styles.count}>{amount}</div>
                     <div className={styles.buttons}>
+                        <Button onClick={deleteCallback} icon="delete" />
                         <Button onClick={decrement} icon="minus" />
                         <Button onClick={increment} icon="plus" />
                     </div>
