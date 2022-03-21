@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from './header/component';
 import { Restaurants } from './restaurants/component';
+import {UserPanel} from "./user-panel/component";
+import {useSelector} from "react-redux";
 
 export const ThemeContext = React.createContext();
 
@@ -10,6 +12,7 @@ export function App({ restaurants }) {
   useEffect(() => {
     setTimeout(() => {setTheme('dark')}, 5000);
   }, []);
+
 
   return (
     <ThemeContext.Provider value={theme}>
