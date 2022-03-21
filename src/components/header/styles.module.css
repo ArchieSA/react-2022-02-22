@@ -14,9 +14,15 @@
     top: 0;
   }
 
-.basket {
+.headerRight {
+  display: flex;
+  align-items: center;
   margin-left: auto;
   margin-right: 20px;
+}
+
+.basket {
+  margin-right: 10px;
 }
 
 .logo {

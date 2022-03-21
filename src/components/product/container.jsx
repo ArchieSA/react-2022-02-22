@@ -1,7 +1,7 @@
 import { Product } from './component';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from "react";
-import { addProduct, removeProduct } from '../../modules/actions/basket-actions'
+import { addProduct, removeProduct, deleteProduct } from '../../modules/actions/basket-actions'
 
 export const ProductContainer = ({ product }) => {
     // const { decrement, increment } = useValue(0);
@@ -19,5 +19,14 @@ export const ProductContainer = ({ product }) => {
         dispatch(addProduct(product.name));
     }, [product.name]);
 
-    return <Product product={product} amount={amount} decrement={decrement} increment={increment} />
+    const deleteCallback = useCallback(() => {
+        dispatch(deleteProduct(product.name));
+    }, [product.name]);
+
+    return <Product 
+        product={product}
+        amount={amount} 
+        decrement={decrement}
+        increment={increment} 
+        deleteCallback={deleteCallback} />
 }
