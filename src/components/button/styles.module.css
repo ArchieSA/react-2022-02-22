@@ -3,13 +3,12 @@
     background-color: var(--yellow);
     border: 1px solid var(--yellow);
     border-radius: 4px;
-    width: 36px;
     height: 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    padding: 0 10px;
     font-weight: 700;
     font-size: 18px;
     line-height: 28px;

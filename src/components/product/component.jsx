@@ -3,8 +3,9 @@ import styles from "./style.module.css";
 import { Button } from '../button/component';
 import { joinIngredients } from './utils';
 import {ThemeContext} from '../app';
+import classnames from 'classnames';
 
-export const Product = ({ product, amount, decrement, increment }) => {
+export const Product = ({ product, amount, decrement, increment, remove }) => {
     const theme = useContext(ThemeContext);
 
     return <div className={styles.product}>
@@ -21,6 +22,9 @@ export const Product = ({ product, amount, decrement, increment }) => {
                     <div className={styles.buttons}>
                         <Button onClick={decrement} icon="minus" />
                         <Button onClick={increment} icon="plus" />
+                    </div>
+                    <div className={classnames(styles.buttons, styles.buttons__remove)}>
+                        <Button onClick={remove} icon="remove" />
                     </div>
                 </div>
             </div>
