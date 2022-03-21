@@ -140,3 +140,10 @@ export const restaurants = [
         ],
     },
 ];
+
+export const user = {
+    id: 'e72f213e-tade-21ls-8918-ed0daa8dd024',
+    name: "test",
+    role: "user",
+    birthd: "2022-03-02",
+}
