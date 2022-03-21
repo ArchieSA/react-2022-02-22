@@ -1,5 +1,6 @@
 export const ADD_PRODUCT = 'basket/ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'basket/REMOVE_PRODUCT';
+export const DELETE_PRODUCT = 'basket/DELETE_PRODUCT';
 
 
 export const addProduct = (productName) => {
@@ -12,6 +13,13 @@ export const addProduct = (productName) => {
 export const removeProduct = (productName) => {
     return {
         type: REMOVE_PRODUCT,
+        productName: productName,
+    };
+}
+
+export const deleteProduct = (productName) => {
+    return {
+        type: DELETE_PRODUCT,
         productName: productName,
     };
 }
