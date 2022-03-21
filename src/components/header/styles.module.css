@@ -15,10 +15,16 @@
   }
 
 .basket {
-  margin-left: auto;
+  margin-left: 20px;
   margin-right: 20px;
 }
 
 .logo {
   margin-left: 20px;
+  margin-right: auto;
+}
+
+.user {
+  color: var(--white);
+  margin-right: 20px;
 }
