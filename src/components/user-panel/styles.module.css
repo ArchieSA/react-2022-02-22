@@ -1,0 +1,20 @@
+.root{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    color: var(--white);
+}
+
+.name {
+    font-weight: bold;
+}
+
+.gender{
+     margin-left: 20px;
+}
+
+.age{
+    margin-left: 20px;
+}
+

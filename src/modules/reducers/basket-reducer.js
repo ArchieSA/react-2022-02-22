@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT } from '../actions/basket-actions';
+import {ADD_PRODUCT, DELETE_PRODUCT, REMOVE_PRODUCT} from '../actions/basket-actions';
 
 const initialState = {
 };
@@ -14,6 +14,11 @@ export const basketReducer = (state = initialState, action) => {
             return {
                 ...state,
                 [action.productName]: state[action.productName] ? state[action.productName] - 1 : 0,
+            };
+        case DELETE_PRODUCT:
+            return {
+                ...state,
+                [action.productName]: 0,
             };
         default:
             return state;

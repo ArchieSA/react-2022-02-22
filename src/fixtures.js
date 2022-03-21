@@ -140,3 +140,10 @@ export const restaurants = [
         ],
     },
 ];
+
+export const user = {
+    id : '381b0c31-6360-43ff-80d1-5812346159d8',
+    name : 'John Smith',
+    gender : 'male',
+    birthday : "1990-04-01"
+}
