@@ -1,6 +1,10 @@
 export function joinIngredients(ingredients = []) {
-    if(ingredients.length !== 0) {
-        return ingredients.join(', ');
+    if(ingredients !== null && ingredients.length !== 0) {
+        const regexp = /^[A-ZА-ЯЁ]+$/i;
+        const result = ingredients.filter(ingredient => regexp.test(ingredient));
+
+        return result.length !== 0 ? result.join(', ') : 'Error in recipe';
     }
-    else return 'No recipe'; 
+    
+    return 'No recipe';
 }
