@@ -1,13 +1,13 @@
 import classnames from 'classnames';
 import styles from './styles.module.css';
 import { useSelector } from 'react-redux';
-import { selectProductCount, selectOrderedProductIds } from '../../modules/selectors/basket-selectors'
+import { selectProductCount, selectOrderedProductIds, selectOrderedProductsPrice } from '../../modules/selectors/basket-selectors'
 import { BasketItem } from '../basket-item/component'
 
 export const Basket = ({ className }) => {
     const productCount = useSelector(selectProductCount);
-    // const price = useSelector(selectOrderedProducts);
     const orderedProducts = useSelector(selectOrderedProductIds);
+    const orderedProductPrice = useSelector(selectOrderedProductsPrice);
 
     return (
         <div className={classnames(styles.root, className)}>
@@ -18,7 +18,7 @@ export const Basket = ({ className }) => {
             </div>
             <div className={styles.result}>
                 <div>{productCount}</div>
-                <div>123$</div>
+                <div>{orderedProductPrice}$</div>
             </div>
         </div>
     )

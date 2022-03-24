@@ -1,0 +1,21 @@
+.reviewForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controlLabel {
+    display: flex;
+    flex-direction: column;
+}
+
+.controlLabel:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+.formButton {
+    width: 100px;
+}
