@@ -1,7 +1,9 @@
 import { createSelector } from 'reselect';
+import { selectProducts } from './product-selectors'
 
 export function selectBasket(state) {
     return state.basket;
+
 }
 
 export const selectProductCount = createSelector(
@@ -17,3 +19,13 @@ export const selectOrderedProductIds = createSelector(
 export const selectProductCountById = (state, productId) => {
     return state.basket[productId];
 };
+
+export const selectOrderSum = createSelector(
+    [selectBasket, selectProducts],
+    (basket, products) => Object.keys(basket).reduce((sum, productId) => {
+        const price = products.find(({id}) => id === productId).price;
+        const count = basket[productId];
+
+        return sum + price * count;
+    }, 0)
+);
