@@ -24,7 +24,7 @@ export const Restaurant = ({ restaurant }) => {
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <Menu menu={menu} />
-                    {/* <Reviews reviews={reviews} />  */}
+                    <Reviews reviews={reviews} />
                 </ErrorBoundary>
             </div>
         </div >
