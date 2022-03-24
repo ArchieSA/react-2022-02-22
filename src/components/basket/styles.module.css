@@ -8,16 +8,13 @@
 
 .productList {
   padding: 10px;
-  width: 200px;
-}
-
-.product {
-  display: flex;
-  justify-content: space-between;
+  /*width: 200px;*/
 }
 
 .result {
   width: 200px;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+  font-weight: bold;
 }
