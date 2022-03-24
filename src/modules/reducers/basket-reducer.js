@@ -12,7 +12,7 @@ export const basketReducer = (state = initialState, action) => {
         case REMOVE_PRODUCT:
             const newCount = state[action.productId] ? state[action.productId] - 1 : 0;
             
-            if(newCount == 0) {
+            if(newCount === 0) {
                 const { [action.productId]: count, ...newState } = state;
                 return newState;
             } 
