@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { selectProductById } from '../../modules/selectors/product-selectors';
 import {
   selectPriceByProductId,
-  selectProductCountById,
-} from '../../modules/selectors/basket-selectors';
+  selectProductById,
+} from '../../modules/selectors/product-selectors';
+import { selectProductCountById } from '../../modules/selectors/basket-selectors';
 import styles from './styles.module.css';
 
 export const BasketItem = ({ productId }) => {

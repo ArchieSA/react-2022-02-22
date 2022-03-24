@@ -1,3 +1,5 @@
+import { createSelector } from 'reselect';
+
 export const selectReviews = (state) => state.reviews;
 
 export const selectReviewById = (state, reviewId) =>
@@ -6,11 +8,16 @@ export const selectReviewById = (state, reviewId) =>
 export const selectUsernameById = (state, userId) =>
   state.users.find(({ id }) => id === userId).name;
 
-export const selectAverageRating = (state, reviewIds) => {
-  const ratings = reviewIds.map(
+export const selectRestaurantRatings = (state, reviewIds) => {
+  return reviewIds.map(
     (reviewId) => state.reviews.find(({ id }) => id === reviewId).rating
   );
-  return Math.round(
-    ratings.reduce((acc, rating) => acc + rating, 0) / ratings.length
-  );
 };
+
+export const selectAverageRating = createSelector(
+  selectRestaurantRatings,
+  (ratings) =>
+    Math.round(
+      ratings.reduce((acc, rating) => acc + rating, 0) / ratings.length
+    )
+);

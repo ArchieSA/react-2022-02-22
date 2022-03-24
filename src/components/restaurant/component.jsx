@@ -14,11 +14,6 @@ export const Restaurant = ({ restaurant }) => {
     selectAverageRating(state, reviews)
   );
 
-  // const averageRating = useMemo(() => {
-  //   const total = reviews.reduce((acc, { rating }) => acc + rating, 0);
-  //   return Math.round(total / reviews.length);
-  // }, [reviews]);
-
   return (
     <div>
       <Banner heading={name}>
@@ -28,7 +23,7 @@ export const Restaurant = ({ restaurant }) => {
       <div className={styles.restaurant}>
         <ErrorBoundary key={restaurant.id}>
           <Menu menu={menu} />
-          <Reviews reviews={reviews} />
+          <Reviews reviews={reviews} restaurantId={restaurant.id} />
         </ErrorBoundary>
       </div>
     </div>

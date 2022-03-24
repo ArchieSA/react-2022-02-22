@@ -1,0 +1,25 @@
+.form {
+    padding: 15px;
+    display: grid;
+    grid-gap: 10px;
+}
+
+.button {
+    background-color: var(--yellow);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--yellow);
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.textarea {
+    width: 100%;
+    resize: vertical;
+    height: 150px;
+}
+
+.textarea, .input {
+    border: 1px solid var(--grey)
+}

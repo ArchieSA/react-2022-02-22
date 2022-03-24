@@ -17,10 +17,6 @@ export const selectProductCountById = (state, productId) => {
   return state.basket[productId];
 };
 
-export const selectPriceByProductId = (state, productId) => {
-  return state.products.find(({ id }) => id === productId).price;
-};
-
 export const selectTotalPrice = createSelector(
   [selectBasket, selectProducts],
   (basket, products) => {
