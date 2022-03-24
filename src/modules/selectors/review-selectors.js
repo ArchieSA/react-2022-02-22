@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { selectUsers } from './user-selectors';
+import { selectRestaurantById } from './restaurant-selectors';
 
 export const selectReviews = (state) => state.reviews;
 
@@ -16,4 +17,12 @@ export const selectReviewWithUserName = createSelector(
         }
     }
 )
-    
+
+export const selectReviewsByRestaurant = createSelector(
+    [selectReviews, selectRestaurantById],
+    (reviews, restaurant) => {
+        return restaurant.reviews.map((reviewId) => {
+            return reviews.find(({id}) => id === reviewId);
+        });
+    }
+)
