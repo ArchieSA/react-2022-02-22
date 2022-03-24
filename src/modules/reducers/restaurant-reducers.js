@@ -6,7 +6,7 @@ export const restaurantReducer = (state = normalizedRestaurants, action) => {
     case UPDATE_RESTAURANT:
       const newState = state.map((restaurant) =>
         restaurant.id === action.id
-          ? { ...restaurant, reviews: [...restaurant.reviews, action.reviewId] }
+          ? { ...restaurant, reviews: [action.reviewId, ...restaurant.reviews] }
           : restaurant
       );
       return newState;
