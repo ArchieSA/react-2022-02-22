@@ -1,9 +1,14 @@
+import {useContext} from 'react';
 import styles from "./style.module.css";
 import { Button } from '../button/component';
 import { joinIngredients } from './utils';
+import {ThemeContext} from '../app';
 
 export const Product = ({ product, amount, decrement, increment }) => {
+    const theme = useContext(ThemeContext);
+
     return <div className={styles.product}>
+        <span>{theme}</span>
         <div className={styles.content}>
             <div>
                 <h4 className={styles.title}>{product.name}</h4>

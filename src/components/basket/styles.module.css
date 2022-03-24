@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 30px;
+}
+
+.productList {
+  padding: 10px;
+  width: 200px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}

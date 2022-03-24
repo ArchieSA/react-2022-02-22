@@ -1,8 +1,24 @@
-import useValue from "../../hooks/use-value";
 import { Product } from './component';
+import { useSelector, useDispatch } from 'react-redux';
+import { useCallback } from "react";
+import { addProduct, removeProduct } from '../../modules/actions/basket-actions'
+import { selectProductById } from '../../modules/selectors/product-selectors'
 
-export const ProductContainer = ({ product }) => {
-    const { amount, decrement, increment } = useValue(0);
+export const ProductContainer = ({ productId }) => {
+    const product = useSelector((state) => selectProductById(state, productId));
 
-    return <Product amount={amount} decrement={decrement} increment={increment} />
+    const dispatch = useDispatch();
+    const amount = useSelector(
+        state => state.basket[product.id] || 0
+    );
+
+    const decrement = useCallback(() => {
+        dispatch(removeProduct(product.id));
+    }, [product.name]);
+
+    const increment = useCallback(() => {
+        dispatch(addProduct(product.id));
+    }, [product.name]);
+
+    return <Product product={product} amount={amount} decrement={decrement} increment={increment} />
 }

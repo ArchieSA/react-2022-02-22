@@ -1,4 +1,4 @@
-import { Product } from "../product/component";
+import { ProductContainer } from "../product/container";
 import styles from './styles.module.css';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -7,8 +7,8 @@ const Menu = ({ menu }) => {
     return (
         <div className={styles.menu}>
             <div>
-                {menu.map((product) => (
-                    <Product key={product.id} product={product} />
+                {menu.map((productId) => (
+                    <ProductContainer key={productId} productId={productId} />
                 ))}
             </div>
         </div>

@@ -18,13 +18,13 @@ export const Restaurant = ({ restaurant }) => {
     return (
         <div>
             <Banner heading={name}>
-                <Rate value={averageRating} />
+                {/* <Rate value={averageRating} /> */}
             </Banner>
 
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <Menu menu={menu} />
-                    <Reviews reviews={reviews} />
+                    {/* <Reviews reviews={reviews} />  */}
                 </ErrorBoundary>
             </div>
         </div >
