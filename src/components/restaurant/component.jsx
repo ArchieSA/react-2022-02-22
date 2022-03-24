@@ -6,6 +6,7 @@ import { Banner } from '../banner/component';
 import { Rate } from '../rate/component';
 import { ErrorBoundary } from '../error-boundary/component';
 import styles from './styles.module.css';
+import { ReviewForm } from '../review-form/component';
 
 export const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
@@ -25,6 +26,7 @@ export const Restaurant = ({ restaurant }) => {
                 <ErrorBoundary key={restaurant.id}>
                     <Menu menu={menu} />
                     <Reviews reviews={reviews} /> 
+                    <ReviewForm />
                 </ErrorBoundary>
             </div>
         </div >
