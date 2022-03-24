@@ -2,7 +2,6 @@ import { createSelector } from 'reselect';
 import { selectProducts } from './product-selectors';
 
 export function selectBasket(state) {
-    console.log(state);
     return state.basket;
 }
 
