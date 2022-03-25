@@ -1,11 +1,11 @@
 
 import { useMemo } from 'react';
 import Menu from '../menu/component';
-import { Reviews } from '../reviews/component';
 import { Banner } from '../banner/component';
 import { Rate } from '../rate/component';
 import { ErrorBoundary } from '../error-boundary/component';
 import styles from './styles.module.css';
+import {ReviewsContainer} from "../reviews/container";
 
 export const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
@@ -24,7 +24,7 @@ export const Restaurant = ({ restaurant }) => {
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <Menu menu={menu} />
-                    {/* <Reviews reviews={reviews} />  */}
+                    <ReviewsContainer reviews={reviews} restaurant={restaurant} />
                 </ErrorBoundary>
             </div>
         </div >
