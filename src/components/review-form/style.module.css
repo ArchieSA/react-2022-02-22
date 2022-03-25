@@ -1,0 +1,36 @@
+.formContainer{
+    padding: 25px;
+}
+
+.formField{
+    margin: 15px 0;
+}
+
+.formField label{
+    font-weight: bold;
+}
+.formField input[type=text],
+.formField select,
+.formField textarea
+{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.btn {
+    padding: 8px 15px;
+    margin-right: 5px;
+}
+.btnPrimary {
+    background-color: var(--green);
+    color: #ffffff;
+}
+
+.error{
+    border: 1px solid red;
+    padding: 15px;
+    font-weight: bold;
+    color: red;
+}
