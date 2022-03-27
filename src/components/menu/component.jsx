@@ -3,12 +3,12 @@ import styles from './styles.module.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Menu = ({ menu }) => {
+const Menu = ({ menu, restId }) => {
     return (
         <div className={styles.menu}>
             <div>
-                {menu.map((productId) => (
-                    <ProductContainer key={productId} productId={productId} />
+                {menu.map((product) => (
+                    <ProductContainer key={product.id} product={product} restId={restId} />
                 ))}
             </div>
         </div>

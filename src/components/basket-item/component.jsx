@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectProductById } from '../../modules/product/selectors';
+import { selectProductById } from '../../modules/products/selectors';
 import { selectProductCountById } from '../../modules/basket/selectors';
 import styles from './styles.module.css';
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from './header/component';
-import { RestaurantsConatainer } from './restaurants/container';
+import { RestaurantsContainer } from './restaurants/container';
 
 export const ThemeContext = React.createContext();
 
-export function App({ restaurants }) {
+export function App() {
   const [theme, setTheme] = useState('default');
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function App({ restaurants }) {
     <ThemeContext.Provider value={theme}>
         <div>
           <Header />
-          <RestaurantsConatainer />
+          <RestaurantsContainer />
         </div>
     </ThemeContext.Provider>
   );

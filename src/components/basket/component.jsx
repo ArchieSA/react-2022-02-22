@@ -1,12 +1,10 @@
-import classnames from 'classnames';
 import styles from './styles.module.css';
 import { useSelector } from 'react-redux';
 import { selectProductCount, selectOrderedProductIds } from '../../modules/basket/selectors'
 import { BasketItem } from '../basket-item/component'
 
-export const Basket = ({ className }) => {
+export const Basket = () => {
     const total = useSelector(selectProductCount);
-    // const price = useSelector(selectOrderedProducts);
     const orderedProducts = useSelector(selectOrderedProductIds);
 
     if (!total) {
@@ -21,7 +19,7 @@ export const Basket = ({ className }) => {
         <div className={styles.basket}>
             <h4 className={styles.title}>Basket</h4>
             {orderedProducts.map((productId) => (
-                <BasketItem productId={productId} />
+                <BasketItem key={productId} productId={productId} />
             ))}
             <hr className={styles.hr} />
             <div className={styles.basketItem}>
@@ -32,7 +30,7 @@ export const Basket = ({ className }) => {
                     <p>{`${total}`}</p>
                 </div>
             </div>
-            <button primary block>
+            <button>
                 checkout
             </button>
         </div>

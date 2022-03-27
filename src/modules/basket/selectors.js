@@ -6,7 +6,7 @@ export function selectBasket(state) {
 
 export const selectProductCount = createSelector(
     selectBasket,
-    (basket) => Object.keys(basket).reduce((acc, productName) => acc + basket[productName], 0)
+    (basket) => Object.values(basket).reduce((acc, { amount }) => acc + amount, 0)
 );
 
 export const selectOrderedProductIds = createSelector(
@@ -15,5 +15,5 @@ export const selectOrderedProductIds = createSelector(
 );
 
 export const selectProductCountById = (state, productId) => {
-    return state.basket[productId];
+    return state.basket[productId]?.amount;
 };
