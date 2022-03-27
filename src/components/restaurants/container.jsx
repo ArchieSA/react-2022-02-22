@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { Restaurants } from "./component"
 import { loadRestaurants } from '../../modules/restaurants/effects/load-restaurants'
 import { selectRestaurants, selectIsRestaurantsLoading, selectIsRestaurantsFailed } from '../../modules/restaurants/selectors'
+import { Loader } from "../loader/component";
 
-export const RestaurantsConatainer = () => {
+export const RestaurantsContainer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,7 +17,7 @@ export const RestaurantsConatainer = () => {
     const isFailed = useSelector(selectIsRestaurantsFailed);
 
     if (isLoading) {
-        return <div>Loading.....</div>
+        return <Loader />
     }
 
     if (isFailed) {

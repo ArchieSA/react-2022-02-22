@@ -5,14 +5,17 @@ export const basketSlice = createSlice({
     initialState: {},
     reducers: {
         addProduct: (state, { payload }) => {
-            state[payload.productId] = (state[payload.productId] || 0) + 1;
+            state[payload.productId] = {
+                amount: (state[payload.productId]?.amount || 0) + 1,
+                restId: payload.restId,
+            };
 
             return state;
         },
         removeProduct: (state, { payload }) => {
-            state[payload.productId] =
-                state[payload.productId] ? state[payload.productId] - 1 : 0;
-
+            const amount = state[payload.productId]?.amount;
+            amount > 1 ? state[payload.productId].amount = amount - 1
+                : delete state[payload.productId];
             return state;
         },
     }
