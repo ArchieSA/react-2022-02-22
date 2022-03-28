@@ -5,6 +5,8 @@ import { basketSlice } from "../../modules/basket"
 import { selectProductById } from '../../modules/product/selectors'
 
 export const ProductContainer = ({ productId }) => {
+
+    
     const product = useSelector((state) => selectProductById(state, productId));
 
     const dispatch = useDispatch();
@@ -20,5 +22,9 @@ export const ProductContainer = ({ productId }) => {
         dispatch(basketSlice.actions.addProduct({ productId: product.id }));
     }, [product.name]);
 
-    return <Product product={product} amount={amount} decrement={decrement} increment={increment} />
+    if(product == null) {
+        return null;
+    }
+    
+    return (<Product product={product} amount={amount} decrement={decrement} increment={increment} />);
 }

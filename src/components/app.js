@@ -4,7 +4,7 @@ import { RestaurantsConatainer } from './restaurants/container';
 
 export const ThemeContext = React.createContext();
 
-export function App({ restaurants }) {
+export function App() {
   const [theme, setTheme] = useState('default');
 
   useEffect(() => {
