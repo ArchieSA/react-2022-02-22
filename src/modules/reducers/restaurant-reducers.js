@@ -1,4 +1,4 @@
-import { normalizedRestaurants } from '../../fixtures'
+import { normalizedRestaurants } from '../../fixtures';
 
 export const restaurantReducer = (state = normalizedRestaurants, action) => {
     switch (action.type) {
