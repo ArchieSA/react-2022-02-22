@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from './header/component';
-import { Restaurants } from './restaurants/component';
+import { RestaurantsConatainer } from './restaurants/container';
 
 export const ThemeContext = React.createContext();
 
@@ -15,7 +15,7 @@ export function App({ restaurants }) {
     <ThemeContext.Provider value={theme}>
         <div>
           <Header />
-          <Restaurants />
+          <RestaurantsConatainer />
         </div>
     </ThemeContext.Provider>
   );

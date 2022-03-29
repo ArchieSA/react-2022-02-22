@@ -1,7 +1,16 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { rootReducer } from './reducers'
+import { configureStore } from '@reduxjs/toolkit';
 
-const composeEnhancers =
-    typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+import { combineReducers } from 'redux';
+import { restaurantsSlice } from './restaurants'
+import { productsSlice } from './product'
+import { basketSlice } from './basket'
 
-export const store = createStore(rootReducer, composeEnhancers(applyMiddleware()));
+export const store = configureStore({
+    reducer: combineReducers({
+        basket: basketSlice.reducer,
+        restaurants: restaurantsSlice.reducer,
+        products: productsSlice.reducer,
+    }),
+    middleware: (getDefaultMidddleware) => getDefaultMidddleware().concat(),
+    devTools: true,
+});

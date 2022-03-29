@@ -1,23 +1,26 @@
-.root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding-top: 30px;
+.basket {
+  padding: 13px 16px 20px;
+  background-color: var(--pink);
+  position: relative;
 }
 
-.productList {
-  padding: 10px;
-  width: 200px;
+.hr {
+  margin: 14px 0;
 }
 
-.product {
-  display: flex;
-  justify-content: space-between;
+.title {
+  text-align: center;
+  margin: 20px 0 16px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.result {
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
+.button {
+  margin-top: 22px;
+}
+
+@media all and (max-width: 767px) {
+  .basket {
+    padding: 20px 24px;
+  }
 }

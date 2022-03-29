@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { selectProductById } from '../../modules/selectors/product-selectors';
-import { selectProductCountById } from '../../modules/selectors/basket-selectors';
+import { selectProductById } from '../../modules/product/selectors';
+import { selectProductCountById } from '../../modules/basket/selectors';
 import styles from './styles.module.css';
 
 export const BasketItem = ({ productId }) => {

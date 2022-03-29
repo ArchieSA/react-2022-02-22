@@ -1,15 +1,11 @@
 import { useState, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { Restaurant } from '../restaurant/component';
-import { Basket } from '../basket/component';
 import { Tabs } from '../tabs/component';
-import { selectRestaurants } from '../../modules/selectors/restaurant-selectors'
 
 import styles from './style.module.css'
 
-export function Restaurants() {
-    const restaurants = useSelector(selectRestaurants);
+export function Restaurants({ restaurants }) {
 
     const [activeId, setActiveId] = useState(restaurants[0].id);
     const tabs = useMemo(
@@ -26,7 +22,6 @@ export function Restaurants() {
             <Tabs tabs={tabs} onChange={setActiveId} activeId={activeId} />
             <div className={styles.content}>
                 <Restaurant restaurant={activeRestaurant} />
-                <Basket />
             </div>
         </div>
     );

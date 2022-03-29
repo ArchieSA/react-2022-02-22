@@ -1,8 +1,8 @@
 import { Product } from './component';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from "react";
-import { addProduct, removeProduct } from '../../modules/actions/basket-actions'
-import { selectProductById } from '../../modules/selectors/product-selectors'
+import { basketSlice } from "../../modules/basket"
+import { selectProductById } from '../../modules/product/selectors'
 
 export const ProductContainer = ({ productId }) => {
     const product = useSelector((state) => selectProductById(state, productId));
@@ -13,11 +13,11 @@ export const ProductContainer = ({ productId }) => {
     );
 
     const decrement = useCallback(() => {
-        dispatch(removeProduct(product.id));
+        dispatch(basketSlice.actions.removeProduct({ productId: product.id }));
     }, [product.name]);
 
     const increment = useCallback(() => {
-        dispatch(addProduct(product.id));
+        dispatch(basketSlice.actions.addProduct({ productId: product.id }));
     }, [product.name]);
 
     return <Product product={product} amount={amount} decrement={decrement} increment={increment} />
