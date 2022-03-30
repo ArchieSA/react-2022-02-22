@@ -5,7 +5,7 @@ import avatar from './img/avatar.png';
 import { logout } from '../../modules/actions/login-actions';
 
 export const UserAvatar = () => {
-    const currentUser = useSelector(state => state.user)
+    const currentUser = useSelector(state => state.userAvatar)
     const dispatch = useDispatch();
     const onLogout = () => {
         dispatch(logout());

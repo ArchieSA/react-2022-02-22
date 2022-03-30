@@ -1,11 +1,13 @@
-const initialState = {
-    name: 'Alex',
-    cash: '1000$'
-}
+import { normalizedUsers } from '../../fixtures';
+import { ADD_USER } from '../actions/user-actions';
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (state = normalizedUsers, action) => {
     switch(action.type) {
-        default: 
+        case ADD_USER: {
+            return [...state, action.user];
+        }
+
+        default:
             return state;
     }
 }

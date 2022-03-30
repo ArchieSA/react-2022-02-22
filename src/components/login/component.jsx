@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from '../../modules/actions/login-actions';
 import { UserAvatar } from '../user-avatar/component';

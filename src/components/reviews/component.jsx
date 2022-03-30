@@ -1,11 +1,12 @@
 import { Review } from '../review/component';
 import styles from './styles.module.css';
+import React from 'react';
 
-export const Reviews = ({ reviews }) => {
+export const Reviews = ({ reviews }) => { 
     return (
         <div className={styles.reviews}>
-            {reviews.map((review) => (
-                <Review key={review.id} {...review} />
+            {reviews.map((reviewId) => (
+                <Review key={reviewId} reviewId={reviewId} />
             ))}
         </div>
     );

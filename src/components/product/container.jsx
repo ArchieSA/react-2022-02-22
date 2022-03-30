@@ -1,8 +1,9 @@
 import { Product } from './component';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from "react";
-import { addProduct, removeProduct, deleteProduct } from '../../modules/actions/basket-actions'
-import { selectProductById } from '../../modules/selectors/product-selectors'
+import React from 'react';
+import { addProduct, removeProduct, deleteProduct } from '../../modules/actions/basket-actions';
+import { selectProductById } from '../../modules/selectors/product-selectors';
 
 export const ProductContainer = ({ productId }) => {
     const product = useSelector((state) => selectProductById(state, productId));
