@@ -1,13 +1,11 @@
-
 import { useMemo } from 'react';
-import Menu from '../menu/component';
 import { Banner } from '../banner/component';
 import { ErrorBoundary } from '../error-boundary/component';
-import { useParams, useRouteMatch } from 'react-router-dom';
 import styles from './styles.module.css';
+import { MenuContainer } from "../menu/container";
 
 export const Restaurant = ({ restaurant }) => {
-    const { name, menu, reviews } = restaurant;
+    const { id, name, menu, reviews } = restaurant;
 
     const averageRating = useMemo(() => {
         const total = reviews.reduce((acc, { rating }) => acc + rating, 0);
@@ -23,7 +21,7 @@ export const Restaurant = ({ restaurant }) => {
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <div>
-                        <Menu menu={menu} />
+                        <MenuContainer menu={menu} restId={id} />
                         {/* <Reviews reviews={reviews} />  */}
                     </div>
                 </ErrorBoundary>

@@ -1,0 +1,13 @@
+.dishes {
+    background-color: var(--pink);
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+}

@@ -11,6 +11,6 @@ export const store = configureStore({
         restaurants: restaurantsSlice.reducer,
         products: productsSlice.reducer,
     }),
-    middleware: (getDefaultMidddleware) => getDefaultMidddleware().concat(),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
     devTools: true,
 });
