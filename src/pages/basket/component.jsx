@@ -32,7 +32,7 @@ export const Basket = ({ className }) => {
                     <p>{`${total}`}</p>
                 </div>
             </div>
-            <button primary block>
+            <button>
                 checkout
             </button>
         </div>
