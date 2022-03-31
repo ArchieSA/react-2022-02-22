@@ -7,8 +7,8 @@ const Menu = ({ menu }) => {
     return (
         <div className={styles.menu}>
             <div>
-                {menu.map((productId) => (
-                    <ProductContainer key={productId} productId={productId} />
+                {menu.map((product) => (
+                    <ProductContainer key={product.id} product={product} />
                 ))}
             </div>
         </div>
