@@ -5,6 +5,7 @@
 /simple_api/node_modules
 /.pnp
 .pnp.js
+.idea
 
 # testing
 /coverage
