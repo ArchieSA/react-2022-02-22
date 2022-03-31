@@ -2,7 +2,8 @@ import React from 'react';
 import { Header } from './header/component';
 import { RestaurantsConatainer } from '../pages/restaurants/container';
 import { Basket } from '../pages/basket/component';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { MenuContainer } from './menu/container';
 
 export const ThemeContext = React.createContext();
 
@@ -20,6 +21,9 @@ export function App() {
           </Route>
           <Route path='/basket'>
             <Basket />
+          </Route>
+          <Route path='/productlist'>
+            <MenuContainer />
           </Route>
         </Switch>
       </div>

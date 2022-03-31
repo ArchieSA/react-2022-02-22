@@ -5,6 +5,7 @@ import { Banner } from '../banner/component';
 import { ErrorBoundary } from '../error-boundary/component';
 import { useParams, useRouteMatch } from 'react-router-dom';
 import styles from './styles.module.css';
+import { MenuContainer } from '../menu/container';
 
 export const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
@@ -23,7 +24,7 @@ export const Restaurant = ({ restaurant }) => {
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <div>
-                        <Menu menu={menu} />
+                        <MenuContainer restaurantId={restaurant.id} />
                         {/* <Reviews reviews={reviews} />  */}
                     </div>
                 </ErrorBoundary>
