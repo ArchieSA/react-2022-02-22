@@ -8,9 +8,14 @@ export const Header = () => {
             <Link className={styles.logo} to="/restaurants" >
                 <Logo />
             </Link>
-            <Link className={styles.basket} to="/basket">
-                Basket
-            </Link>
+            <div className={styles.menu}>
+                <Link className={styles.link} to="/products">
+                    Products
+                </Link>
+                <Link className={styles.link} to="/basket">
+                    Basket
+                </Link>
+            </div>
         </header>
     )
 };
