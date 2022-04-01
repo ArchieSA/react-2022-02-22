@@ -6,6 +6,7 @@ import { Banner } from '../banner/component';
 import { Rate } from '../rate/component';
 import { ErrorBoundary } from '../error-boundary/component';
 import styles from './styles.module.css';
+import PropTypes from 'prop-types'
 
 export const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
@@ -24,9 +25,15 @@ export const Restaurant = ({ restaurant }) => {
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <Menu menu={menu} />
+                </ErrorBoundary>
+                <ErrorBoundary key={restaurant.id}>
                     <Reviews reviews={reviews} />
                 </ErrorBoundary>
             </div>
         </div >
     );
 };
+
+Restaurant.propTypes = {
+    restaurant: PropTypes.object, 
+}
