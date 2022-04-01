@@ -2,12 +2,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Restaurants } from "./component"
 import { loadRestaurantsIfNotExist } from '../../modules/restaurants/effects/load-restaurants'
+import { loadProductsIfNotExist } from '../../modules/product/effects/load-products'
 import { selectRestaurants, selectIsRestaurantsLoading, selectIsRestaurantsFailed } from '../../modules/restaurants/selectors'
 
 export const RestaurantsConatainer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(loadProductsIfNotExist());
         dispatch(loadRestaurantsIfNotExist());
     }, []);
 
@@ -26,7 +28,5 @@ export const RestaurantsConatainer = () => {
     if (!restaurants?.length) {
         return null;
     }
-
-
     return <Restaurants restaurants={restaurants} />
 }

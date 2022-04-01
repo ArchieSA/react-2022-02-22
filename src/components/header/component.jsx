@@ -1,6 +1,8 @@
 import { ReactComponent as Logo } from '../../icons/logo.svg';
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
+import { Button } from '../button/component';
+import cn from 'classnames';
 
 export const Header = () => {
     return (
@@ -10,6 +12,9 @@ export const Header = () => {
             </Link>
             <Link className={styles.basket} to="/basket">
                 Basket
+            </Link>
+            <Link className={styles.cookbook} to="/cookbook">
+                <Button icon='cookbook' className={styles.button} />
             </Link>
         </header>
     )
