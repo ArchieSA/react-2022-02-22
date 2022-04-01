@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Header } from './header/component';
-import { RestaurantsConatainer } from './restaurants/container';
+import { RestaurantsConatainer } from '../pages/restaurants/container';
+import { Basket } from '../pages/basket/component';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 export const ThemeContext = React.createContext();
 
-export function App({ restaurants }) {
-  const [theme, setTheme] = useState('default');
-
-  useEffect(() => {
-    setTimeout(() => {setTheme('dark')}, 5000);
-  }, []);
-
+export function App() {
   return (
-    <ThemeContext.Provider value={theme}>
-        <div>
-          <Header />
-          <RestaurantsConatainer />
-        </div>
-    </ThemeContext.Provider>
+    <Router>
+      <div>
+        <Header />
+        <Switch>
+          <Route path='/' exact>
+            <div>Home page</div>
+          </Route>
+          <Route path='/restaurants'>
+            <RestaurantsConatainer />
+          </Route>
+          <Route path='/basket'>
+            <Basket />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }

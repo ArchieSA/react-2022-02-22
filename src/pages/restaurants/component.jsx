@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 
-import { Restaurant } from '../restaurant/component';
-import { Tabs } from '../tabs/component';
+import { Restaurant } from '../../components/restaurant/component';
+import { Tabs } from '../../components/tabs/component';
 
 import styles from './style.module.css'
 

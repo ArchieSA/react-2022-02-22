@@ -8,7 +8,7 @@ export const BasketItem = ({ productId }) => {
     const count = useSelector(state => selectProductCountById(state, productId))
 
     return (
-        <div key={product.id} className={styles.product}>
+        <div className={styles.product}>
             <span className={styles.name}>{product.name}</span>
             <span className={styles.count}>{count}</span>
         </div>

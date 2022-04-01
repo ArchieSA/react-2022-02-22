@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Restaurants } from "./component"
-import { loadRestaurants } from '../../modules/restaurants/effects/load-restaurants'
+import { loadRestaurantsIfNotExist } from '../../modules/restaurants/effects/load-restaurants'
 import { selectRestaurants, selectIsRestaurantsLoading, selectIsRestaurantsFailed } from '../../modules/restaurants/selectors'
 
 export const RestaurantsConatainer = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadRestaurants());
+        dispatch(loadRestaurantsIfNotExist());
     }, []);
 
     const restaurants = useSelector(selectRestaurants);
