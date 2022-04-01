@@ -7,10 +7,15 @@
   .menu > * {
     padding: 12px 0;
   }
+
+  .searchField {
+    margin-bottom: 20px;
+    margin: 20px 12px;
+  }
   
   @media all and (min-width: 768px) {
     .menu {
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-between;
       padding-bottom: 0;
     }

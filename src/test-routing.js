@@ -9,3 +9,12 @@ const push = (event) => {
     window.history.pushState({ id }, "", url);
 }
 
+
+const restaurantBaseUrl = 'restaurants';
+
+export const paths = {
+    restaurants: {
+        restaurantList: `/${restaurantBaseUrl}`,
+        restaurant: `/${restaurantBaseUrl}/:id`,
+    },
+}

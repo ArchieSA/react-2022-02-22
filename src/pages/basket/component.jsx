@@ -3,11 +3,19 @@ import styles from './styles.module.css';
 import { useSelector } from 'react-redux';
 import { selectProductCount, selectOrderedProductIds } from '../../modules/basket/selectors'
 import { BasketItem } from '../../components/basket-item/component'
+import { useHistory } from 'react-router-dom';
+import { useCallback } from 'react';
 
 export const Basket = ({ className }) => {
     const total = useSelector(selectProductCount);
     // const price = useSelector(selectOrderedProducts);
     const orderedProducts = useSelector(selectOrderedProductIds);
+    const history = useHistory();
+
+    const makeOrder = useCallback(() => {
+        //logic
+        history.replace('/restaurants');
+    }, [history]);
 
     if (!total) {
         return (
@@ -32,7 +40,7 @@ export const Basket = ({ className }) => {
                     <p>{`${total}`}</p>
                 </div>
             </div>
-            <button primary block>
+            <button primary block onClick={makeOrder}>
                 checkout
             </button>
         </div>

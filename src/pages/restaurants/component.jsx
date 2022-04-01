@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react';
+import { useRouteMatch, useParams } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
-import { Restaurant } from '../../components/restaurant/component';
+import { RestaurantContainer } from '../../components/restaurant/container';
 import { Tabs } from '../../components/tabs/component';
 
 import styles from './style.module.css'
@@ -17,12 +19,16 @@ export function Restaurants({ restaurants }) {
         [activeId, restaurants]
     );
 
+    const { path } = useRouteMatch();
+
     return (
         <div>
             <Tabs tabs={tabs} onChange={setActiveId} activeId={activeId} />
-            <div className={styles.content}>
-                <Restaurant restaurant={activeRestaurant} />
-            </div>
+            <Route path={`${path}/:id`}>
+                <div className={styles.content}>
+                    <RestaurantContainer />
+                </div>
+            </Route>
         </div>
     );
 }
