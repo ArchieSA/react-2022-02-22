@@ -1,11 +1,10 @@
 import { useState, useMemo } from 'react';
-
-import { Restaurant } from '../restaurant/component';
+import React from 'react';
+import { RestaurantContainer } from '../restaurant/container';
 import { Tabs } from '../tabs/component';
+import styles from './style.module.css';
 
-import styles from './style.module.css'
-
-export function Restaurants({ restaurants }) {
+export const Restaurants = ({ restaurants }) => {
 
     const [activeId, setActiveId] = useState(restaurants[0].id);
     const tabs = useMemo(
@@ -21,7 +20,7 @@ export function Restaurants({ restaurants }) {
         <div>
             <Tabs tabs={tabs} onChange={setActiveId} activeId={activeId} />
             <div className={styles.content}>
-                <Restaurant restaurant={activeRestaurant} />
+                <RestaurantContainer restaurant={activeRestaurant} />
             </div>
         </div>
     );

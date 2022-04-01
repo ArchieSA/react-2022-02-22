@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-
+import React from 'react';
 import banner from './img/banner.jpg';
 
 export const Banner = ({ heading, children }) => (

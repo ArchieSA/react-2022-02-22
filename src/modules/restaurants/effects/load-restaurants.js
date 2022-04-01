@@ -1,4 +1,4 @@
-import { restaurantsSlice } from '../index'
+import { restaurantsSlice } from '../index';
 
 export function loadRestaurants() {
     return function (dispatch) {
