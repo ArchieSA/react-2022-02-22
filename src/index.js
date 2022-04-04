@@ -6,14 +6,12 @@ import './index.css';
 
 import { App } from './components/app';
 
-import { restaurants } from "./fixtures"
-
 import {store} from './modules'
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App restaurants={restaurants} />
+      <App />
     </Provider>
   </React.StrictMode>,
 

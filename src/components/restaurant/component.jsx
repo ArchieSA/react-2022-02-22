@@ -1,10 +1,12 @@
 
 import { useMemo } from 'react';
 import Menu from '../menu/component';
+import { MenuContainer } from '../menu/container';
 import { Banner } from '../banner/component';
 import { ErrorBoundary } from '../error-boundary/component';
 import { useParams, useRouteMatch } from 'react-router-dom';
 import styles from './styles.module.css';
+import { ReviewsContainer } from '../reviews/container';
 
 export const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
@@ -13,7 +15,6 @@ export const Restaurant = ({ restaurant }) => {
         const total = reviews.reduce((acc, { rating }) => acc + rating, 0);
         return Math.round(total / reviews.length);
     }, [reviews]);
-
     return (
         <div>
             <Banner heading={name}>
@@ -23,8 +24,8 @@ export const Restaurant = ({ restaurant }) => {
             <div className={styles.restaurant}>
                 <ErrorBoundary key={restaurant.id}>
                     <div>
-                        <Menu menu={menu} />
-                        {/* <Reviews reviews={reviews} />  */}
+                        <MenuContainer restaurantId={restaurant.id} />
+                        <ReviewsContainer restaurantId={restaurant.id} /> 
                     </div>
                 </ErrorBoundary>
             </div>
