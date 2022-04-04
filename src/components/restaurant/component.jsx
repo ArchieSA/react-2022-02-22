@@ -1,24 +1,29 @@
 
 import { useMemo } from 'react';
-import Menu from '../menu/component';
+import { useSelector } from 'react-redux';
+import { selectReviewsByRestaurantId } from '../../modules/reviews/selectors';
+
 import { MenuContainer } from '../menu/container';
 import { Banner } from '../banner/component';
 import { ErrorBoundary } from '../error-boundary/component';
-import { useParams, useRouteMatch } from 'react-router-dom';
-import styles from './styles.module.css';
 import { ReviewsContainer } from '../reviews/container';
+import { Rate } from '../rate/component';
 
-export const Restaurant = ({ restaurant }) => {
-    const { name, menu, reviews } = restaurant;
+import styles from './styles.module.css';
+
+export const Restaurant = ({ restaurant, reviews }) => {
+    const { name } = restaurant;
 
     const averageRating = useMemo(() => {
-        const total = reviews.reduce((acc, { rating }) => acc + rating, 0);
-        return Math.round(total / reviews.length);
+        if(reviews && Object.keys(reviews).length === 0) return 0;
+        const total = Object.values(reviews).reduce((acc, { rating }) => acc + rating, 0);
+        return Math.round(total / Object.keys(reviews).length);
     }, [reviews]);
+
     return (
         <div>
             <Banner heading={name}>
-                {/* <Rate value={averageRating} /> */}
+                <Rate value={averageRating} />
             </Banner>
 
             <div className={styles.restaurant}>

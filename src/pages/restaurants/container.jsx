@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Restaurants } from "./component"
 import { loadRestaurantsIfNotExist } from '../../modules/restaurants/effects/load-restaurants'
-import { Loader } from "../loader/component";
+import { Loader } from "../../components/loader/component";
 import { selectRestaurants, selectIsRestaurantsLoading, selectIsRestaurantsFailed } from '../../modules/restaurants/selectors'
 
 export const RestaurantsConatainer = () => {

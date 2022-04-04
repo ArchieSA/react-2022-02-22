@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadReviews } from "../../modules/reviews/effects/load-reviews";
 import { loadUsers } from "../../modules/users/effects/load-users";
-import { selectIsReviewsLoading, selectIsReviewsFailed, selectReviewsByRestaurantId } from '../../modules/reviews/selectors';
+import { selectIsReviewsLoading, selectIsReviewsFailed, selectReviewIdsByRestaurantId } from '../../modules/reviews/selectors';
 import { selectIsUsersLoading, selectIsUsersFailed } from '../../modules/users/selectors';
 
 export const ReviewsContainer = ({restaurantId}) => {
@@ -17,7 +17,7 @@ export const ReviewsContainer = ({restaurantId}) => {
         dispatch(loadUsers());
     }, []);
 
-    const reviews = useSelector((state) => selectReviewsByRestaurantId(state, restaurantId));
+    const reviews = useSelector((state) => selectReviewIdsByRestaurantId(state, restaurantId));
     const isFailed = useSelector(selectIsReviewsFailed);
     const isLoading = useSelector(selectIsReviewsLoading);
     

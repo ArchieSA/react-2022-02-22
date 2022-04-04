@@ -6,7 +6,6 @@ import { selectProductById } from '../../modules/product/selectors'
 
 export const ProductContainer = ({ productId }) => {
 
-    
     const product = useSelector((state) => selectProductById(state, productId));
 
     const dispatch = useDispatch();
