@@ -24,7 +24,7 @@ export const ReviewsContainer = ({restaurantId}) => {
     const isUserLoading = useSelector(selectIsUsersFailed);
     //const isUserFailed = useSelector(selectIsUsersLoading);
 
-    if (isLoading && isUserLoading) {
+    if (isLoading || isUserLoading) {
         return <Loader/>
     }
     

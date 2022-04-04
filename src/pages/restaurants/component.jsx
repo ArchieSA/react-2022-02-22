@@ -1,3 +1,4 @@
+import { tab } from '@testing-library/user-event/dist/tab';
 import { useState, useMemo } from 'react';
 import { useRouteMatch, useParams } from 'react-router-dom';
 import { Route } from 'react-router-dom';
@@ -19,11 +20,11 @@ export function Restaurants({ restaurants }) {
         [activeId, restaurants]
     );
 
-    const { path } = useRouteMatch();
+    const { path, url } = useRouteMatch();
 
     return (
         <div>
-            <Tabs tabs={tabs} onChange={setActiveId} activeId={activeId} />
+            <Tabs tabs={tabs} url={url} />
             <Route path={`${path}/:id`}>
                 <div className={styles.content}>
                     <RestaurantContainer />
