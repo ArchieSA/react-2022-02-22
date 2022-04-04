@@ -12,7 +12,7 @@ export function loadRestaurantsIfNotExist() {
 
         dispatch(restaurantsSlice.actions.startLoading());
 
-        fetch('http://localhost:3001/api/restaurants').then((res) => res.json()).then((restaurants) => {
+        fetch('/api/restaurants').then((res) => res.json()).then((restaurants) => {
             dispatch(restaurantsSlice.actions.addRestaurants({
                 restaurants: restaurants.reduce((acc, restaurant) => {
                     acc[restaurant.id] = restaurant;

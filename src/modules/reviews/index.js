@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const productsSlice = createSlice({
-    name: 'products',
+export const reviewsSlice = createSlice({
+    name: 'reviews',
     initialState: {
         isLoading: false,
         isFailed: false,
@@ -22,14 +22,14 @@ export const productsSlice = createSlice({
 
             return state;
         },
-        addProducts: (state, { payload: { products } }) => {
+        addReviews: (state, { payload: { reviews } }) => {
             return {
                 ...state,
                 isLoading: false,
                 isFailed: false,
                 entities: {
                     ...state.entities,
-                    ...products,
+                    ...reviews,
                 }
             }
         }
