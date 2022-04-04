@@ -14,12 +14,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
-<<<<<<< HEAD
-    "react-scripts": "^2.1.3",
-=======
     "react-router-dom": "^5.2.1",
     "react-scripts": "5.0.0",
->>>>>>> 6883d19963ad378ccc1a5394452fb53e6c0e84cc
     "redux": "^4.1.2",
     "reselect": "^4.1.5",
     "web-vitals": "^2.1.4"
