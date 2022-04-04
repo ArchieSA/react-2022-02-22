@@ -1,0 +1,12 @@
+.table {
+    font-size: 20px;
+    text-align: center;
+}
+
+.table th, .table td {
+    padding: 10px;
+}
+
+.table tr {
+    background-color: gainsboro;
+}

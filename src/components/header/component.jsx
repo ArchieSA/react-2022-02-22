@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactComponent as Logo } from '../../icons/logo.svg';
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,9 @@ export const Header = () => {
         <header className={styles.header}>
             <Link className={styles.logo} to="/restaurants" >
                 <Logo />
+            </Link>
+            <Link className={styles.products} to="/products_list">
+                Product Lists
             </Link>
             <Link className={styles.basket} to="/basket">
                 Basket

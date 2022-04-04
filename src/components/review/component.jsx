@@ -1,3 +1,4 @@
+import React from 'react';
 import { Rate } from '../rate/component';
 import styles from './styles.module.css';
 

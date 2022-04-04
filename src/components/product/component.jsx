@@ -1,4 +1,5 @@
-import {useContext} from 'react';
+import React from 'react';
+import { useContext } from 'react';
 import styles from "./style.module.css";
 import { Button } from '../button/component';
 import { joinIngredients } from './utils';

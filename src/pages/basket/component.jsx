@@ -1,10 +1,10 @@
-import classnames from 'classnames';
+import React from 'react';
 import styles from './styles.module.css';
 import { useSelector } from 'react-redux';
 import { selectProductCount, selectOrderedProductIds } from '../../modules/basket/selectors'
 import { BasketItem } from '../../components/basket-item/component'
 
-export const Basket = ({ className }) => {
+export const Basket = () => {
     const total = useSelector(selectProductCount);
     // const price = useSelector(selectOrderedProducts);
     const orderedProducts = useSelector(selectOrderedProductIds);

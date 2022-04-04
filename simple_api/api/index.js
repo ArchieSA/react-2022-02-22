@@ -34,4 +34,8 @@ router.get('/users', (req, res, next) => {
   reply(res, users);
 });
 
+router.get('/products_list', (req, res, next) => {
+  reply(res, products);
+});
+
 module.exports = router;
