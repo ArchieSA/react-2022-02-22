@@ -12,6 +12,17 @@ export const selectProductsByRestaurantId = createSelector(
     }
 )
 
+export const selectProductsByRestaurantIdAndNameQuery = (state, restaurantId, query) => {
+    if(!query || query === "") {
+        return selectProductsByRestaurantId(state, restaurantId);
+    }
+    const products = selectProducts(state);
+    const restaurant = selectRestaurantById(state, restaurantId);
+        return restaurant.menu.filter((productId) => {
+            return products.entities[productId] && products.entities[productId].name.toLowerCase().includes(query.toLowerCase());
+    });
+}
+
 export const selectProductById = (state, productId) =>
     state.products.entities[productId] || null;
 

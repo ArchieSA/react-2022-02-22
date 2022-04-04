@@ -1,35 +1,30 @@
 .menu {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+  margin-top: 20px;
+}
+
+.menu>* {
+  padding: 12px 0;
+}
+
+@media all and (min-width: 768px) {
+  .menu {
     flex-direction: column;
-    padding-bottom: 60px;
-  }
-  
-  .menu > * {
-    padding: 12px 0;
+    justify-content: space-between;
+    padding-bottom: 0;
   }
 
-  .searchField {
-    margin-bottom: 20px;
-    margin: 20px 12px;
+  .menu>*:first-child {
+    flex: 1 0 calc(100% - 400px - 2 * 24px);
   }
-  
-  @media all and (min-width: 768px) {
-    .menu {
-      flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 0;
-    }
-  
-    .menu > *:first-child {
-      flex: 1 0 calc(100% - 400px - 2 * 24px);
-    }
-  
-    .menu > *:last-child {
-      flex: 1 0 calc(400px - 24px);
-    }
-  
-    .menu > * {
-      padding: 0 12px;
-    }
+
+  .menu>*:last-child {
+    flex: 1 0 calc(400px - 24px);
   }
-  
+
+  .menu>* {
+    padding: 0 12px;
+  }
+}

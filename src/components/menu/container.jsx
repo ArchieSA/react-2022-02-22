@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { loadProducts } from "../../modules/product/effects/load-products";
-import { selectIsProductsFailed, selectIsProductsLoading, selectProductsByRestaurantId } from "../../modules/product/selectors";
+import { selectIsProductsFailed, selectIsProductsLoading } from "../../modules/product/selectors";
 import { Loader } from "../loader/component";
 
-import Menu from "./component"
+import { SearchList } from "../search-list/component";
+
 
 export const MenuContainer = ({restaurantId}) => {
     const dispatch = useDispatch();
@@ -14,7 +15,6 @@ export const MenuContainer = ({restaurantId}) => {
         dispatch(loadProducts(restaurantId));
     }, []);
 
-    const products = useSelector((state) => selectProductsByRestaurantId(state, restaurantId));
     const isFailed = useSelector(selectIsProductsFailed);
     const isLoading = useSelector(selectIsProductsLoading);
 
@@ -27,11 +27,7 @@ export const MenuContainer = ({restaurantId}) => {
         return <div>Refresh later</div>
     }
 
-    if (!products?.length) {
-        return null;
-    }
-
     return (
-        <Menu menu={products}/>
+        <SearchList restaurantId={restaurantId}  /> 
     );
 }
