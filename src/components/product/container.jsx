@@ -3,14 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from "react";
 import { basketSlice } from "../../modules/basket"
 import { selectProductById } from '../../modules/product/selectors'
+import React from 'react';
 
 export const ProductContainer = ({ productId }) => {
     const product = useSelector((state) => selectProductById(state, productId));
 
     const dispatch = useDispatch();
-    const amount = useSelector(
-        state => state.basket[product.id] || 0
-    );
+    const amount = useSelector(state => state.basket[product.id] || 0);
 
     const decrement = useCallback(() => {
         dispatch(basketSlice.actions.removeProduct({ productId: product.id }));

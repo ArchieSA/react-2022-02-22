@@ -5,6 +5,7 @@ import { selectProductCount, selectOrderedProductIds } from '../../modules/baske
 import { BasketItem } from '../../components/basket-item/component'
 import { useHistory } from 'react-router-dom';
 import { useCallback } from 'react';
+import React from 'react';
 
 export const Basket = ({ className }) => {
     const total = useSelector(selectProductCount);

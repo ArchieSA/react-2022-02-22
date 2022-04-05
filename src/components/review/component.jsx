@@ -1,5 +1,6 @@
 import { Rate } from '../rate/component';
 import styles from './styles.module.css';
+import React from 'react';
 
 export const Review = ({ user, text, rating }) => (
     <div className={styles.review}>

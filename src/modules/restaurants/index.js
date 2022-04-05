@@ -24,14 +24,12 @@ export const restaurantsSlice = createSlice({
         },
         addRestaurants: (state, { payload: { restaurants } }) => {
             return {
-                ...state,
                 isLoading: false,
                 isFailed: false,
                 entities: {
                     ...state.entities,
                     ...restaurants,
                 }
-
             }
         }
     }

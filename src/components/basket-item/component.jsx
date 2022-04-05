@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectProductById } from '../../modules/product/selectors';
 import { selectProductCountById } from '../../modules/basket/selectors';
 import styles from './styles.module.css';
+import React from 'react';
 
 export const BasketItem = ({ productId }) => {
     const product = useSelector(state => selectProductById(state, productId))

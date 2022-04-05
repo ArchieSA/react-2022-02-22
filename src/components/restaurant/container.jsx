@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { Restaurant } from "./component"
 import { selectRestaurantsById } from '../../modules/restaurants/selectors'
+import React from 'react';
 
 export const RestaurantContainer = () => {
     const { id } = useParams();

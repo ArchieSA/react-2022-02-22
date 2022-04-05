@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Restaurants } from "./component"
 import { loadRestaurantsIfNotExist } from '../../modules/restaurants/effects/load-restaurants'
 import { selectRestaurants, selectIsRestaurantsLoading, selectIsRestaurantsFailed } from '../../modules/restaurants/selectors'
+import React from 'react';
 
 export const RestaurantsConatainer = () => {
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export const RestaurantsConatainer = () => {
         return <div>Refresh later</div>
     }
 
-    if (!restaurants?.length) {
+    if (!restaurants.length) {
         return null;
     }
 
