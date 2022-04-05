@@ -3,6 +3,7 @@ import styles from "./style.module.css";
 import { Button } from '../button/component';
 import { joinIngredients } from './utils';
 import {ThemeContext} from '../app';
+import React from 'react';
 
 export const Product = ({ product, amount, decrement, increment }) => {
     const theme = useContext(ThemeContext);

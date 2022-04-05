@@ -6,7 +6,7 @@ export function loadRestaurantsIfNotExist() {
         const state = getState();
         const restaurants = selectRestaurants(state);
         
-        if (restaurants?.length) {
+        if (restaurants.length) {
             return;
         }
 

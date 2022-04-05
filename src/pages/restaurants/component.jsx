@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
-import { useRouteMatch, useParams } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-
+import React from 'react';
 import { RestaurantContainer } from '../../components/restaurant/container';
 import { Tabs } from '../../components/tabs/component';
 

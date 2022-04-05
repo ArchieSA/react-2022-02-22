@@ -5,9 +5,22 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-const Menu = ({ menu }) => {
+const Menu = ({ menu, products }) => {
     const [searchValue, setSearchValue] = useState("");
+    const [filteredMenu, setFilteredMenu] = useState(menu);
     const history = useHistory();
+    const { search } = useLocation();
+
+    useEffect(() => {
+        const parsed = search.substr(3);
+        const result = products.filter(product => product.name.toLowerCase().includes(parsed.toLowerCase()));
+        if(result.length !== 0 && result !== undefined) {
+            setFilteredMenu(result.map(res => res.id));
+        }
+        else {
+            setFilteredMenu(menu);
+        }
+    }, [search, products]);
 
     useEffect(() => {
         if (searchValue) {
@@ -17,22 +30,19 @@ const Menu = ({ menu }) => {
         } else {
             history.replace({
                 search: `?q=""`
-            })
+            });
         }
     }, [searchValue, history]);
-
-    const { search } = useLocation();
-
-
 
     return (
         <div className={styles.menu}>
             <input
                 value={searchValue}
                 className={styles.searchField}
-                onChange={(event) => setSearchValue(event.currentTarget.value)} />
+                onChange={(event) => setSearchValue(event.currentTarget.value)}
+                placeholder="Please select product..." />
             <div>
-                {menu.map((productId) => (
+                {filteredMenu.map(productId => (
                     <ProductContainer key={productId} productId={productId} />
                 ))}
             </div>
@@ -43,7 +53,6 @@ const Menu = ({ menu }) => {
 Menu.propTypes = {
     menu: PropTypes.array,
 };
-
 
 Menu.defaultProps = {
     menu: [],
